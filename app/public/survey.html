@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/survey">Survey</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Modal -->
+                <div class="modal fade" id="match-modal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Meet Your New Match</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="matchName"></p>
+                                <img id="matchPic" src="" alt="No Image" style="width:100px;height:100px;border:0;">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <form>
+                    <h1>Survey Questions</h1>
+                    <hr>
+                    <h2>About You</h2>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Name (Required)</label>
+                        <input type="text" class="form-control validate" id="name" placeholder="input name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Link to Photo Image (Required)</label>
+                        <input type="text" class="form-control validate" id="photo" placeholder="input link">
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group">
+                        <h2>Question 1</h2>
+                        <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+                        <select class="form-control validate" id="q1">
+                            <option value>Select an option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 2</h2>
+                        <label for="exampleFormControlSelect1">Generally speaking, you rely more on your experience than your imagination.</label>
+                        <select class="form-control validate" id="q2">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 3</h2>
+                        <label for="exampleFormControlSelect1">You find it easy to stay relaxed and focused even when there is some pressure.</label>
+                        <select class="form-control validate" id="q3">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 4</h2>
+                        <label for="exampleFormControlSelect1">You rarely do something just out of sheer curiosity.</label>
+                        <select class="form-control validate" id="q4">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 5</h2>
+                        <label for="exampleFormControlSelect1">People can rarely upset you.</label>
+                        <select class="form-control validate" id="q5">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 6</h2>
+                        <label for="exampleFormControlSelect1">It is often difficult for you to relate to other people’s feelings.</label>
+                        <select class="form-control validate" id="q6">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 7</h2>
+                        <label for="exampleFormControlSelect1">In a discussion, truth should be more important than people’s sensitivities.</label>
+                        <select class="form-control validate" id="q7">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 8</h2>
+                        <label for="exampleFormControlSelect1">You rarely get carried away by fantasies and ideas.</label>
+                        <select class="form-control validate" id="q8">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 9</h2>
+                        <label for="exampleFormControlSelect1">You think that everyone’s views should be respected regardless of whether they are supported by facts
+                            or not.
+                        </label>
+                        <select class="form-control validate" id="q9">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h2>Question 10</h2>
+                        <label for="exampleFormControlSelect1">You feel more energetic after spending time with a group of people.</label>
+                        <select class="form-control validate" id="q10">
+                            <option value>Select an Option</option>
+                            <option value="1">1 (Strongly disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly agree)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <footer>
+                        <p style="margin: 20px 0 20px 0;">
+                            <a id="friendlist" href="/api/friends">API Friends List</a> |
+                            <a id="githubrepo" href="https://github.com/dzarrillo/friendfinder">Github Repo</a>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="assets/javascript/survey.js"></script> -->
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function getFriendsData() {
+            // console.log("In getFriendsData");
+            var currentUrl = window.location.origin;
+
+            //currentUrl = /routing/apiRoutes.js -  app.get('/api/friends'
+            $.ajax({ url: currentUrl + "/api/friends", method: "GET" })
+                // app/data/friend.js
+                .done(function (friend) {
+                    console.log("__________________");
+                    console.log("Url: " + currentUrl + "/api/survey");
+                    console.log("_______________________________");
+                    console.log(friend);
+
+                    // get data and display it back to user
+                    for (var i = 0; i < friend.length; i++) {
+                        console.log("Name: " + friend[i].name);
+                        var score = 0;
+                        // Create another for loop to loop through scores
+                        for (var c = 0; c < friend[i].scores.length; c++) {
+                            console.log("Score " + friend[i].scores[c])
+                            score += friend[i].scores[c];
+                        }
+                        console.log("Name " + friend[i].name + " score: " + score);
+                    }
+                })
+        }
+
+
+        $("#btnSubmit").on('click', function (event) {
+            // Prevent screen from refreshing
+            event.preventDefault();
+
+            //form validation
+            function validateForm() {
+                var isValid = true;
+                $('.validate').each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                $('.browser-default').each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+
+            // console.log("name " + $("#name").val().trim());
+
+            // if everything was entered
+            if (validateForm() === true) {
+                // create new survey
+                var newSurvey = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+                    ]
+                };
+
+
+                // console.log("Name: " + newSurvey.name);
+                // console.log("Photo: " + newSurvey.photo);
+                // for(var i = 0; i < newSurvey.scores.length; i++){
+                //     console.log("Scores " + newSurvey.scores[i]);
+                // }
+
+
+                var currentUrl = window.location.origin;
+                // I'm getting error -  jquery.js:9631 POST http://localhost:8080/api/friends 500
+                console.log("My endpoint: " + currentUrl + "/api/friends");
+                //This calls the routing/apiRoutes.js  ->  app.post and in app.post saves to friend.js
+                $.post(currentUrl + "/api/friends", newSurvey, function (data) {
+                    console.log("data.name " + data.name);
+                    console.log("data.photo " + data.photo);
+
+                    $("#matchName").text(data.name);
+                    $("#matchPic").attr("src", data.photo);
+                });
+
+                // Clear the form when submitting
+                // $('#name').val("");
+                // $('#photo').val("");
+                // $('#q1').val("");
+                // $('#q2').val("");
+                // $('#q3').val("");
+                // $('#q4').val("");
+                // $('#q5').val("");
+                // $('#q6').val("");
+                // $('#q7').val("");
+                // $('#q8').val("");
+                // $('#q9').val("");
+                // $('#q10').val("");
+
+                // $('.modal').modal();
+                $("#match-modal").modal("show");
+            } else {
+                // Please fill out ALL fields before submitting survey!
+                $("#matchName").text("Please fill out ALL fields before submitting survey!");
+                $("#matchPic").attr("src", "");
+                $("#match-modal").modal("show");
+            }
+
+
+        });
+    });
+
+</script>
+
+</html>
